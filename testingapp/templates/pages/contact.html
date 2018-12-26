@@ -1,0 +1,42 @@
+{% extends "pages/page.html"%}
+
+{% block content%}
+
+    {% block title %}
+
+    <h1 >Contact us </h1>
+
+{% endblock title %}
+
+    {% if submitted %}
+
+    <p class="success">Your message was submitted successfully. Thank you.</p>
+
+    {% else %}
+
+     <form action="" method="post" novalidate>
+
+    <table>
+        {{ form.as_table }}
+    <tr>
+    <td>&nbsp;</td>
+    <td><input type="reset" value="reset"></td>
+    </tr>
+    </table>
+ {% csrf_token %}
+
+     </form>
+
+    {% endif %}
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
