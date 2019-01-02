@@ -17,12 +17,17 @@ from django.contrib import admin
 from django.conf.urls import url, include
 from testingapp import views
 from django.views.generic import TemplateView
-
+from django.views.generic import TemplateView
+from  quotes.views import Register
 
 urlpatterns = [
+
     url(r'^testpage$', TemplateView.as_view(template_name="pages/page.html")),
     url(r'^admin/', admin.site.urls),
+    url(r'^register/success/$', TemplateView.as_view(template_name="registration/success.html"),name ='register-success'),
+    url('^register/$', Register.as_view(),name='register'),
     url(r'^quote', include('quotes.urls')),
+    url(r'^', include('django.contrib.auth.urls')),
     url(r'^', include('testingapp.urls')),
 
 

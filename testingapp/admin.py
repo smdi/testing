@@ -3,8 +3,6 @@ from .models import Page
 
 
 
-
-
 class PageAdmin(admin.ModelAdmin):
     list_display = ('title','update_date')
     ordering = ('title',)
